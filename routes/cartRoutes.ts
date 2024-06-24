@@ -13,7 +13,8 @@ const auth = passport.authenticate("jwt", {
 
 const router: Router = express.Router();
 
-router.post("/add", auth, cartController.addToCart);
+router.post("/addOne", auth, cartController.addItemToCart);
+router.post("/add", auth, cartController.addItemsToCart);
 router.get("/get", auth, cartController.getCartItems);
 router.delete("/remove/:id", auth, cartController.removeCartItem);
 router.put("/increase/:id", auth, cartController.increaseQuantity);

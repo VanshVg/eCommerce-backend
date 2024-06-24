@@ -177,7 +177,6 @@ export const login = async (req: Request, res: Response) => {
       isUsername.dataValues.contact_no,
       isUsername.dataValues.email
     ) as string;
-
     return res
       .status(200)
       .cookie("token", token, {
